@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinema.View.TransferPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ECECEC">
+
+            <Image Source="iconarrowleft2Black" WidthRequest="20" HeightRequest="20" 
+                   HorizontalOptions="StartAndExpand" Margin="20,20,20,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Back"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label Text="Ticket" TextColor="Black" Padding="20,0" Margin="0,15,0,0"
+                           FontSize="20" FontAttributes="Bold"></Label>
+
+            <ScrollView>
+
+
+                <StackLayout>
+
+
+
+                    <AbsoluteLayout Margin="0,20,0,0">
+
+
+
+                        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+
+
+                            <!--<Button Clicked="TicketMove" Text="dsds"/>-->
+
+                            <ListView HasUnevenRows="True" SelectionMode="None"
+                              x:Name="TrList">
+
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Frame Margin="10,10" CornerRadius="10" BackgroundColor="White">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="0.1*"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Label Text="{Binding Date}" TextColor="Black"
+                                                Grid.Row="0" Grid.Column="0"
+                                                FontAttributes="Bold"></Label>
+
+                                                    <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                                                        <Label Text="Ticket View" TextColor="Black" FontAttributes="Bold"
+                                                    HorizontalOptions="EndAndExpand"></Label>
+                                                        <Image Source="Errowpb" WidthRequest="20" HeightRequest="20"></Image>
+                                                    </StackLayout>
+
+
+                                                    <Label Text="{Binding MovieName}" TextColor="#423e3e"
+                                                Grid.Row="1" Grid.Column="0"></Label>
+
+                                                    <BoxView Grid.Row="2" Grid.Column="0"
+                                                    Grid.ColumnSpan="2" BackgroundColor="LightGray"
+                                                    HeightRequest="0.01"></BoxView>
+
+                                                    <Label Text="Price" FontAttributes="Bold" TextColor="Black"
+                                                Grid.Row="3" Grid.Column="0"></Label>
+
+                                                    <Label Text="{Binding amount,StringFormat='RM {0:F2}'}" TextColor="OrangeRed" HorizontalOptions="EndAndExpand"
+                                                    FontAttributes="Bold" FontFamily="AA"
+                                                    Grid.Row="3" Grid.Column="1"></Label>
+
+                                                </Grid>
+
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer CommandParameter="{Binding resid}" Tapped="TicketMove"/>
+                                                </Frame.GestureRecognizers>
+
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+
+
+
+
+                        </StackLayout>
+
+
+
+                    </AbsoluteLayout>
+
+                </StackLayout>
+
+
+            </ScrollView>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

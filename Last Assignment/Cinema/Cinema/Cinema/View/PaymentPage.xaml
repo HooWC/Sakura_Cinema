@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:pancardview="clr-namespace:PanCardView;assembly=PanCardView" 
+             xmlns:processors="clr-namespace:PanCardView.Processors;assembly=PanCardView" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms" 
+             xmlns:syncmaskededit="clr-namespace:Syncfusion.XForms.MaskedEdit;assembly=Syncfusion.SfMaskedEdit.XForms"
+             x:Class="Cinema.View.PaymentPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" HeightRequest="700">
+
+
+
+
+                <Image Source="StartPageCenter"
+                   AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1.1"
+                       TranslationY="-20"
+                       Aspect="AspectFill"
+                   ></Image>
+
+                <BoxView BackgroundColor="Black"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     Opacity="0.8"
+                     x:Name="Boxnm"
+                     ></BoxView>
+
+
+                <StackLayout AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            Padding="0,0,0,0">
+
+                    <StackLayout Orientation="Horizontal"
+                         Padding="16,10,0,5"
+                         VerticalOptions="Start"
+                         HorizontalOptions="FillAndExpand">
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Image Source="arrowp"
+                               WidthRequest="40"
+                               HeightRequest="25">
+
+                            </Image>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+                    <StackLayout HorizontalOptions="FillAndExpand"
+                                 VerticalOptions="Fill">
+
+                        <pancardview:CoverFlowView
+                            x:Name="HorizontalList"
+                            IsCyclical="True"
+                            PositionShiftValue="65"
+                            PropertyChanged="ChangedTheName">
+                            <x:Arguments>
+                                <processors:CoverFlowProcessor ScaleFactor="0.9" OpacityFactor="0.5"/>
+                            </x:Arguments>
+
+                            <pancardview:CoverFlowView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <Frame HeightRequest="150"
+                                           WidthRequest="200"
+                                           Margin="30,0,45,10"
+                                           CornerRadius="20"
+                                           IsClippedToBounds="True"
+                                           Padding="0">
+
+                                        <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                                                        VerticalOptions="FillAndExpand">
+
+                                            <StackLayout AbsoluteLayout.LayoutFlags="All"
+                                                         AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+                                                <Image Source="{Binding MoviePoster}"></Image>
+
+                                            </StackLayout>
+
+                                        </AbsoluteLayout>
+
+
+                                        <!--<Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="Walped" CommandParameter="{Binding Name}"/>
+                                        </Frame.GestureRecognizers>-->
+
+
+                                    </Frame>
+
+                                </DataTemplate>
+                            </pancardview:CoverFlowView.ItemTemplate>
+
+                        </pancardview:CoverFlowView>
+
+                    </StackLayout>
+
+
+                    <StackLayout Padding="10,0">
+
+                        <Label Text="Card Type" TextColor="White"></Label>
+                        <inputLayout:SfTextInputLayout
+                             Hint="Type" 
+                             ContainerType="Outlined"
+                             OutlineCornerRadius="8"
+                             FocusedColor="White"
+                             UnfocusedColor="#e6e7e8">
+                            <Entry IsReadOnly="True" x:Name="CardType" TextColor="White"/>
+                        </inputLayout:SfTextInputLayout>
+
+                        <Label Text="Card Number" TextColor="White"></Label>
+                        <inputLayout:SfTextInputLayout
+                             Hint="Number" 
+                             ContainerType="Outlined"
+                             OutlineCornerRadius="8"
+                             FocusedColor="White"
+                             UnfocusedColor="#e6e7e8">
+                            <syncmaskededit:SfMaskedEdit
+                                    Keyboard="Numeric"
+                                    Mask="0000 0000 0000 0000" 
+                                TextColor="White"
+                                x:Name="CNumber"/>
+                        </inputLayout:SfTextInputLayout>
+
+
+                        <StackLayout Orientation="Horizontal" Margin="0,-5,0,0">
+
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                <Label Text="Expiry Date" TextColor="White"></Label>
+                                <inputLayout:SfTextInputLayout
+                                        Hint="Date" 
+                                        ContainerType="Outlined"
+                                        OutlineCornerRadius="8"
+                                        FocusedColor="White"
+                                        UnfocusedColor="#e6e7e8"
+                                        HelperText="MM/DD/YYYY"
+                                        
+                                    >
+                                    <syncmaskededit:SfMaskedEdit x:Name="maskedEdita"
+                                                                 TextColor="White" PromptChar="*"
+                                                                 MaskType="Text" Mask="00/00/0000"
+                                                                 HidePromptOnLeave="True"
+                                                                 />
+                                </inputLayout:SfTextInputLayout>
+                            </StackLayout>
+
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                <Label Text="CVV" TextColor="White"></Label>
+                                <inputLayout:SfTextInputLayout
+                                        Hint="CVV" 
+                                        ContainerType="Outlined"
+                                        OutlineCornerRadius="8"
+                                        FocusedColor="White"
+                                        UnfocusedColor="#e6e7e8" CharMaxLength="3">
+                                    <syncmaskededit:SfMaskedEdit x:Name="maskedEditb" Mask="\w+" MaskType="RegEx" PasswordChar="*" 
+                                                                 TextColor="White"/>
+                                </inputLayout:SfTextInputLayout>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <Label Text="Name" TextColor="White"
+                               Margin="0,0,0,0"></Label>
+                        <inputLayout:SfTextInputLayout
+                             Hint="UserName" 
+                             ContainerType="Outlined"
+                             OutlineCornerRadius="8"
+                             FocusedColor="White"
+                             UnfocusedColor="#e6e7e8">
+                            <Entry IsReadOnly="True" x:Name="NameType" TextColor="White"/>
+                        </inputLayout:SfTextInputLayout>
+
+                        <syncfusion:SfButton VerticalOptions="EndAndExpand" Text="PAYMENT" CornerRadius="20" HeightRequest="50"
+                                             Clicked="PopupPayment">
+                            <syncfusion:SfButton.BackgroundGradient>
+                                <gradient:SfRadialGradientBrush Radius="1.5">
+                                    <gradient:SfRadialGradientBrush.GradientStops>
+                                        <gradient:SfGradientStop Color="#FFB57B" Offset="0"/>
+                                        <gradient:SfGradientStop Color="#FF5361" Offset="1"/>
+                                    </gradient:SfRadialGradientBrush.GradientStops>
+                                </gradient:SfRadialGradientBrush>
+                            </syncfusion:SfButton.BackgroundGradient>
+                        </syncfusion:SfButton>
+
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+
+            </AbsoluteLayout>
+
+
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

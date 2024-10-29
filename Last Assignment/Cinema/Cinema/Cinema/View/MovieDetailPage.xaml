@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="Cinema.View.MovieDetailPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:vm="clr-namespace:Cinema.ViewModel">
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:UserVM x:Key="UserVM"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#ECECEC">
+
+            <StackLayout>
+                <AbsoluteLayout>
+                    <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                        <WebView HorizontalOptions="FillAndExpand"
+                     HeightRequest="250"
+                     x:Name="TrailerDisplay">
+
+                        </WebView>
+                    </StackLayout>
+
+                    <!--<Image Source="whiteArrowIcon" WidthRequest="20" HeightRequest="20" 
+                   HorizontalOptions="StartAndExpand" Margin="20,20,0,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Back"/>
+                        </Image.GestureRecognizers>
+                    </Image>-->
+
+
+                    <pancakeview:PancakeView BackgroundColor="#474747" Margin="0"
+                                            CornerRadius="50,0,50,0"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1.3,0.9,0.3"
+                                            WidthRequest="700" Padding="10"
+                                            HorizontalOptions="EndAndExpand">
+
+                        <StackLayout Orientation="Horizontal" Padding="40,0,30,0">
+
+                            <StackLayout HorizontalOptions="StartAndExpand" >
+                                <Image Source="starIcon" WidthRequest="25" HeightRequest="25"/>
+                                <Label TextColor="White" Text="{Binding RatingStar}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                            </StackLayout>
+
+                            <BoxView BackgroundColor="LightGray" WidthRequest="1"></BoxView>
+
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                <Label TextColor="White" Text="{Binding Language}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="25"/>
+                                <Label TextColor="White" Text="Language" HorizontalTextAlignment="Center"  FontAttributes="Bold"/>
+                            </StackLayout>
+
+                            <BoxView BackgroundColor="LightGray" WidthRequest="1"></BoxView>
+
+                            <StackLayout HorizontalOptions="EndAndExpand">
+                                <Label TextColor="White" Text="{Binding Age_restrictions}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="25"/>
+                                <Label TextColor="White" Text="MPAA" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </pancakeview:PancakeView>
+
+
+
+                </AbsoluteLayout>
+
+                <StackLayout Padding="10,0" Margin="0,70,0,0">
+
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Padding="5,0" >
+
+                        <StackLayout>
+                            <Label Text="{Binding Title}"  FontAttributes="Bold" TextColor="black"
+                                   FontSize="23"/>
+                            <Label Text="{Binding Duration}" Padding="2,0,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                            <Frame CornerRadius="100" HasShadow="True" HeightRequest="32" WidthRequest="32"
+                                       BackgroundColor="#f57695" Padding="5" Margin="12,0,0,0">
+                                <Image Source="plusIcon" HeightRequest="10" WidthRequest="10"/>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="MoveCalendar"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <CollectionView x:Name="dataFind" HeightRequest="40" Margin="7,10,0,25">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Horizontal" Span="1" HorizontalItemSpacing="12"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Frame BackgroundColor="White" CornerRadius="50" 
+                                           Padding="15,10" BorderColor="LightGray">
+                                        <Label Text="{Binding}" FontSize="14"/>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <StackLayout>
+                        <Label Text="Plot Summary" TextColor="Black"
+                               FontSize="17"/>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="{Binding Description}"/>
+                    </StackLayout>
+
+                    <StackLayout Margin="0,30,0,0">
+                        <Label Text="Cast &amp; Crew" TextColor="Black"
+                               FontSize="17"/>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand"
+                                 HeightRequest="130"
+                                 Padding="0,0,0,0" Margin="0,0,0,0">
+
+                        <CollectionView ItemsLayout="HorizontalList"
+                                        x:Name="ActorCast"
+                                        HeightRequest="250"
+                                        HorizontalScrollBarVisibility="Never"
+                                        VerticalOptions="Start">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <StackLayout Padding="10">
+                                        <abstractions:CircleImage Aspect="AspectFill"
+                                                  WidthRequest="60"
+                                                  HeightRequest="60"
+                                                  HorizontalOptions="CenterAndExpand"
+                                                  Source="{Binding ActorImage}">
+
+                                        </abstractions:CircleImage>
+
+                                        <Label Text="{Binding ActorName}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+
+                                    </StackLayout>
+
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+
+
+                    </StackLayout>
+
+                    <StackLayout Margin="0,10,0,0">
+                        <Label Text="Director" TextColor="Black"
+                               FontSize="17"/>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand"
+                                 HeightRequest="130"
+                                 Padding="0,0,0,0" Margin="0,0,0,0">
+
+                        <CollectionView ItemsLayout="HorizontalList"
+                                        x:Name="DirectorCart"
+                                        HeightRequest="250"
+                                        HorizontalScrollBarVisibility="Never"
+                                        VerticalOptions="Start">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <StackLayout Padding="10">
+                                        <abstractions:CircleImage Aspect="AspectFill"
+                                                  WidthRequest="60"
+                                                  HeightRequest="60"
+                                                  HorizontalOptions="CenterAndExpand"
+                                                  Source="{Binding DirectorImage}">
+
+                                        </abstractions:CircleImage>
+
+                                        <Label Text="{Binding DirectorName}" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+
+                                    </StackLayout>
+
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+
+
+                    </StackLayout>
+
+                    <StackLayout Margin="10,5,10,10" VerticalOptions="EndAndExpand">
+
+                        <button:SfButton Text="Back" CornerRadius="10" HeightRequest="50" 
+                             BackgroundColor="LightGray" FontAttributes="Bold"  
+                                 TextColor="Black" Clicked="Back">
+                        </button:SfButton>
+                    </StackLayout>
+
+
+
+
+                </StackLayout>
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

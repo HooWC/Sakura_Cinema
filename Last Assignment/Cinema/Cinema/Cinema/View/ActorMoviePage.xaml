@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="Cinema.View.ActorMoviePage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ECECEC">
+
+            <Image Source="iconarrowleft2Black" WidthRequest="20" HeightRequest="20" 
+                   HorizontalOptions="StartAndExpand" Margin="20,20,20,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Back"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <StackLayout Padding="0,10,0,10">
+
+                <abstractions:CircleImage Aspect="AspectFill"
+                                              WidthRequest="80"
+                                              HeightRequest="80"
+                                              HorizontalOptions="CenterAndExpand"
+                                              x:Name="avatar">
+
+                </abstractions:CircleImage>
+
+                <Label x:Name="Name" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+            </StackLayout>
+
+
+            <ScrollView>
+
+                <StackLayout>
+
+                    <AbsoluteLayout Margin="0,20,0,0">
+
+                        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+                            <Label Text="Movie" TextColor="Black" Padding="20,0"
+                           FontSize="20" FontAttributes="Bold"></Label>
+
+                        </StackLayout>
+
+                        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0,0,1,1" Margin="0,0,0,20">
+                            <!--HeightRequest="710"-->
+                            <CollectionView x:Name="MediaList" HeightRequest="680"  Margin="10,0,20,0">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical"
+                                                         Span="2"
+                                                         HorizontalItemSpacing="6"
+                                                         VerticalItemSpacing="22"/>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+
+                                        <Frame Padding="0" CornerRadius="10" HeightRequest="220">
+                                            <AbsoluteLayout>
+                                                <Image Source="{Binding MoviePoster}" Aspect="AspectFill"
+                                                           AbsoluteLayout.LayoutFlags="All"
+                                                           AbsoluteLayout.LayoutBounds="0,0,1,1"></Image>
+
+                                                <StackLayout  AbsoluteLayout.LayoutFlags="All"
+                                                                  AbsoluteLayout.LayoutBounds="0,0,1,1" Padding="10">
+
+                                                    <Frame CornerRadius="50" HasShadow="True" HeightRequest="15" WidthRequest="15"
+                                                               BackgroundColor="white" Padding="10" Margin="0" HorizontalOptions="EndAndExpand">
+                                                        <Label Text="{Binding RatingStar,StringFormat='{0:F2}'}" 
+                                                                   TextColor="black" FontSize="10" FontAttributes="Bold"/>
+                                                    </Frame>
+
+                                                    <Frame BackgroundColor="White" CornerRadius="20" Opacity="0.6" 
+                                                               VerticalOptions="EndAndExpand" Padding="5">
+                                                        <Label Text="{Binding Director}" HorizontalTextAlignment="Center"
+                                                                   TextColor="#000000" FontSize="14" FontAttributes="Bold"/>
+                                                    </Frame>
+
+                                                </StackLayout>
+                                            </AbsoluteLayout>
+
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="MovieHot" CommandParameter="{Binding MovieID}"/>
+                                            </Frame.GestureRecognizers>
+
+                                        </Frame>
+
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                        </StackLayout>
+
+
+
+                    </AbsoluteLayout>
+
+                </StackLayout>
+
+
+            </ScrollView>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

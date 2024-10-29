@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="Cinema.View.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:vm="clr-namespace:Cinema.ViewModel">
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:LoginVM x:Key="LoginVM"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" HeightRequest="700">
+
+
+                <Image Source="StartPageTopGray"
+                       AbsoluteLayout.LayoutFlags="All"
+                       AbsoluteLayout.LayoutBounds="0,0,1,1"
+                       Aspect="AspectFill"
+                   ></Image>
+
+                <StackLayout AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0,1,1,0.83">
+
+                    <Frame HeightRequest="440"
+                           BackgroundColor="white"
+                           Margin="30,0"
+                           CornerRadius="10"
+                           HasShadow="True">
+
+                        <StackLayout>
+
+                            <StackLayout Margin="0,10,0,0" HorizontalOptions="CenterAndExpand">
+                                <Label Text="Welcome!" FontAttributes="Bold" FontSize="40"/>
+                                <Label Text="Sign In To Continue" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+
+                            <StackLayout VerticalOptions="EndAndExpand" Margin="0,0,0,35">
+                                <inputLayout:SfTextInputLayout
+                                    Hint="User ID"
+                                    ContainerType="Outlined"
+                                    LeadingViewPosition="Inside"
+                                    OutlineCornerRadius="10"
+                                >
+                                    <!--Text="{Binding Username}"-->
+                                    <Entry TextColor="Black" Text="{Binding Username}"/>
+                                    <inputLayout:SfTextInputLayout.LeadingView>
+                                        <Image Source="iconsuser"   HeightRequest="23" WidthRequest="37" />
+                                    </inputLayout:SfTextInputLayout.LeadingView>
+                                </inputLayout:SfTextInputLayout>
+
+                                <inputLayout:SfTextInputLayout
+                                    Hint="Password"
+                                    ContainerType="Outlined"
+                                    LeadingViewPosition="Inside"
+                                    OutlineCornerRadius="10"
+                                    EnablePasswordVisibilityToggle="true"
+                                Margin="0" Padding="0"
+                                >
+                                    <!--Text="{Binding Password}"-->
+                                    <Entry TextColor="Black" Margin="0" Text="{Binding Password}"/>
+                                    <inputLayout:SfTextInputLayout.LeadingView>
+                                        <Image Source="iconspassword" HeightRequest="35" WidthRequest="35"/>
+                                    </inputLayout:SfTextInputLayout.LeadingView>
+                                </inputLayout:SfTextInputLayout>
+
+
+                                <Label Text="Forget Password" TextColor="#2ec986" FontAttributes="Bold"
+                                   HorizontalOptions="EndAndExpand" TranslationY="-20" Padding="0,2,5,0">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="ForgetPasswordMethod"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <!--Command="{Binding LoginFunction}"-->
+                                <button:SfButton Text="Log In" CornerRadius="10" HeightRequest="50" 
+                                                 BackgroundColor="#E14545" FontAttributes="Bold"
+                                                 Margin="0,15,0,0" Clicked="LoginMethod">
+                                </button:SfButton>
+
+                            </StackLayout>
+
+
+                        </StackLayout>
+
+                    </Frame>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Don’t have an account yet?"/>
+                        <Label Text="SIGN UP" TextColor="#2ec986" FontAttributes="Bold">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SignUpMethod"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+
+                        <Label Text="Or Sign With" HorizontalTextAlignment="Center"/>
+
+                        <StackLayout Orientation="Horizontal" Margin="0,0,0,30"
+                                     HorizontalOptions="CenterAndExpand">
+
+                            <Frame CornerRadius="10" HasShadow="True" HeightRequest="30" WidthRequest="30"
+                                   BackgroundColor="white" Padding="5">
+                                <Image Source="facebookIcon" HeightRequest="20" WidthRequest="20"/>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="IconImage"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame CornerRadius="10" HasShadow="True" HeightRequest="30" WidthRequest="30"
+                                   BackgroundColor="white" Padding="5"
+                                   Margin="10,0,10,0">
+                                <Image Source="googleIcon" HeightRequest="20" WidthRequest="20"/>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="IconImage"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame CornerRadius="10" HasShadow="True" HeightRequest="30" WidthRequest="30"
+                                   BackgroundColor="white" Padding="5">
+                                <Image Source="LinkindinIcon" HeightRequest="10" WidthRequest="10"/>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="IconImage"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+                <BoxView BackgroundColor="Black"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     Opacity="0.5"
+                     x:Name="Boxblack"
+                         IsVisible="false"
+                     ></BoxView>
+
+                <Image Source="Loading"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                   Aspect="Fill"
+                   IsAnimationPlaying="True"
+                   x:Name="loadingpic"
+                       IsVisible="false"
+                   ></Image>
+
+            </AbsoluteLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

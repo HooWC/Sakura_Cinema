@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages="http://rotorgames.com" xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinema.PopupPage.PaymentPopup">
+    <pages:PopupPage.Animation>
+        <pages:MoveAnimation DurationIn="500"
+                              DurationOut="500"
+                              EasingIn="SpringIn"
+                              EasingOut="SpringOut"
+                              HasBackgroundAnimation="True"
+                              PositionIn="Bottom"
+                              PositionOut="Bottom">
+
+        </pages:MoveAnimation>
+    </pages:PopupPage.Animation>
+
+    <ScrollView>
+        <AbsoluteLayout x:Name="ds">
+            <StackLayout AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,1,1,0.56"
+                 HeightRequest="800">
+
+                <pancakeview:PancakeView BackgroundColor="white"
+               CornerRadius="10,10,0,0" VerticalOptions="FillAndExpand"
+               WidthRequest="300" Padding="20"
+               HorizontalOptions="FillAndExpand">
+
+                    <StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Label Text="Note: " TextColor="red" FontAttributes="Bold"/>
+                            <Label Text="Please double check if you really want to pay?"/>
+                        </StackLayout>
+
+                        <button:SfButton Text="Payment" CornerRadius="10" HeightRequest="50" 
+                                             BackgroundColor="#E14545" FontAttributes="Bold"
+                                                 Margin="0,15,0,0" Clicked="Button_Clicked_1">
+                        </button:SfButton>
+
+                        <button:SfButton Text="Cancel" CornerRadius="10" HeightRequest="50" 
+                                             BackgroundColor="LightGray" FontAttributes="Bold"
+                                                 Margin="0,5,0,0" TextColor="Black"
+                                     Clicked="Button_Clicked">
+                        </button:SfButton>
+                    </StackLayout>
+
+                </pancakeview:PancakeView>
+
+
+            </StackLayout>
+
+
+            <BoxView BackgroundColor="Black"
+                     AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     Opacity="0.5"
+                     x:Name="Boxblack"
+                     ></BoxView>
+
+            <Image Source="Loading"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+                   AbsoluteLayout.LayoutBounds="0.5,0.5,50,50"
+                   Aspect="Fill"
+                   IsAnimationPlaying="True"
+                   x:Name="loadingpic"
+                   ></Image>
+
+
+
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

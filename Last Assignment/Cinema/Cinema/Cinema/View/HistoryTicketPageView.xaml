@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="Cinema.View.HistoryTicketPageView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#ECECEC" HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+
+            <!--<Image Source="iconarrowleft2Black" WidthRequest="20" HeightRequest="20" 
+                   HorizontalOptions="StartAndExpand" Margin="20,20,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Back"/>
+                </Image.GestureRecognizers>
+            </Image>-->
+
+
+            <Frame CornerRadius="10" HeightRequest="300" 
+                   HorizontalOptions="CenterAndExpand"  Padding="0" 
+                   WidthRequest="200" Margin="10">
+                <Image x:Name="img"
+                       Aspect="AspectFill" WidthRequest="200"/>
+            </Frame>
+
+            <StackLayout Margin="20,0">
+
+                <Label x:Name="MovieTitle" FontAttributes="Bold" FontSize="20"/>
+                <Label x:Name="MovieTime" />
+
+                <StackLayout Margin="0,20,0,0">
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="Date" FontAttributes="Bold" FontSize="18"/>
+                        <Label x:Name="CinemaTime" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center"
+                               FontAttributes="Bold" FontSize="18"/>
+                    </StackLayout>
+
+
+                    <Label x:Name="Hall"/>
+                    <Label x:Name="Seat"/>
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <BoxView BackgroundColor="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"
+                     Margin="20,10"/>
+
+            <StackLayout Margin="20,0" Orientation="Horizontal">
+                <StackLayout>
+
+                    <Label Text="UserID No" FontAttributes="Bold" FontSize="15"/>
+                    <Label x:Name="userid"/>
+
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="EndAndExpand">
+
+                    <Label Text="Amount" FontAttributes="Bold" FontSize="15"/>
+                    <Label x:Name="amount" TextColor="OrangeRed"/>
+
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Margin="20,15,20,10" VerticalOptions="EndAndExpand">
+
+                <button:SfButton Text="Back" CornerRadius="10" HeightRequest="50" 
+                             BackgroundColor="LightGray" FontAttributes="Bold"  
+                                 TextColor="Black" Clicked="Back">
+                </button:SfButton>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

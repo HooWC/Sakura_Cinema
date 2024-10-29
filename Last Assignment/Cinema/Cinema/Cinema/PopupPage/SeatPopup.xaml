@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+                  x:Class="Cinema.PopupPage.SeatPopup">
+    <pages:PopupPage.Animation>
+        <pages:MoveAnimation DurationIn="500"
+                              DurationOut="500"
+                              EasingIn="SpringIn"
+                              EasingOut="SpringOut"
+                              HasBackgroundAnimation="True"
+                              PositionIn="Bottom"
+                              PositionOut="Bottom">
+
+        </pages:MoveAnimation>
+    </pages:PopupPage.Animation>
+
+    <ScrollView>
+        <AbsoluteLayout x:Name="ds">
+            <StackLayout AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0,1,1,0.6"
+                 HeightRequest="800" >
+
+                <pancakeview:PancakeView BackgroundColor="white"
+               CornerRadius="10,10,0,0" VerticalOptions="FillAndExpand"
+               WidthRequest="300" Padding="20"
+               HorizontalOptions="FillAndExpand">
+
+                    <StackLayout>
+
+                        <Label x:Name="MovieTitle" FontAttributes="Bold"
+                           HorizontalOptions="CenterAndExpand" FontSize="20"
+                           Margin="0,0,0,10"/>
+
+                        <Label x:Name="SeatText"
+                           HorizontalOptions="CenterAndExpand" FontSize="17"
+                           Margin="0,0,0,0"/>
+
+                        <Label x:Name="MoneyName" 
+                           HorizontalOptions="CenterAndExpand" FontSize="17"
+                           Margin="0,0,0,10"/>
+
+                        <button:SfButton Text="Confirm" CornerRadius="10" HeightRequest="50" 
+                                             BackgroundColor="#E14545" FontAttributes="Bold"
+                                                 Margin="0,15,0,0"
+                                     Clicked="Button_Clicked_1">
+                        </button:SfButton>
+
+                        <button:SfButton Text="Cancel" CornerRadius="10" HeightRequest="50" 
+                                             BackgroundColor="LightGray" FontAttributes="Bold"
+                                                 Margin="0,5,0,0" TextColor="Black"
+                                     Clicked="Button_Clicked">
+                        </button:SfButton>
+                    </StackLayout>
+
+                </pancakeview:PancakeView>
+
+
+            </StackLayout>
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

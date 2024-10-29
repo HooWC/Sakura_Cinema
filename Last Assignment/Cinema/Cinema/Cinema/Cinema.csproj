@@ -1,0 +1,137 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ProduceReferenceAssemblyInOutDir>true</ProduceReferenceAssemblyInOutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\AbrilFatface-Regular.ttf" />
+    <None Remove="Fonts\BebasNeue-Regular.ttf" />
+    <None Remove="Fonts\BerkshireSwash-Regular.ttf" />
+    <None Remove="Fonts\ConcertOne-Regular.ttf" />
+    <None Remove="Fonts\Exo2-VariableFont_wght.ttf" />
+    <None Remove="Fonts\Kalam-Bold.ttf" />
+    <None Remove="Fonts\Kalam-Regular.ttf" />
+    <None Remove="Fonts\LibreBaskerville-Italic.ttf" />
+    <None Remove="Fonts\Merienda-Bold.ttf" />
+    <None Remove="Fonts\NotoSerifSC-Bold.otf" />
+    <None Remove="Fonts\Playball-Regular.ttf" />
+    <None Remove="Fonts\Signika-VariableFont_wght.ttf" />
+    <None Remove="Fonts\Viga-Regular.ttf" />
+    <None Remove="Fonts\ZCOOLKuaiLe-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\AbrilFatface-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\BebasNeue-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\BerkshireSwash-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\ConcertOne-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\Exo2-VariableFont_wght.ttf" />
+    <EmbeddedResource Include="Fonts\Kalam-Bold.ttf" />
+    <EmbeddedResource Include="Fonts\Kalam-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\LibreBaskerville-Italic.ttf" />
+    <EmbeddedResource Include="Fonts\Merienda-Bold.ttf" />
+    <EmbeddedResource Include="Fonts\NotoSerifSC-Bold.otf" />
+    <EmbeddedResource Include="Fonts\Playball-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\Signika-VariableFont_wght.ttf" />
+    <EmbeddedResource Include="Fonts\Viga-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\ZCOOLKuaiLe-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CardsView" Version="2.8.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="OneSignalSDK.Xamarin" Version="4.3.4" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="21.2.10" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="21.2.10" />
+    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="21.2.10" />
+    <PackageReference Include="Syncfusion.Xamarin.SfMaskedEdit" Version="21.2.10" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="21.2.10" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="21.2.10" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="PopupPage\CalendarPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PopupPage\ForgetPasswordFailedPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PopupPage\ForgetPasswordPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PopupPage\LoginFailedPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PopupPage\OpenTenuPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PopupPage\PaymentPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PopupPage\SeatPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PopupPage\SignupFailedPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PopupPage\SignupPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ActorMoviePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ActorMovieSearchPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\CalendarPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\HistoryTicketPageView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\MovieDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\MoviePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\MovieTuneSearchPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\PaymentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\SeatPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Start.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\TicketPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\TransferPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

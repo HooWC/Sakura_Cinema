@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "EvJBIlAWvxG5A0eHkc1GllzGUCrb9w/2vPXR7xl7sa1kZgZxeaY1kyoMtOQPoY887JpjJg28JeN2I3UfA97auw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Hoo\\Desktop\\Last Assignment\\Cinema\\Cinema\\Cinema\\Cinema.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hoo\\.nuget\\packages\\cardsview\\2.8.1\\cardsview.2.8.1.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\onesignalsdk.xamarin\\4.3.4\\onesignalsdk.xamarin.4.3.4.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\rg.plugins.popup\\2.1.0\\rg.plugins.popup.2.1.0.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\syncfusion.licensing\\21.2.10\\syncfusion.licensing.21.2.10.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\syncfusion.xamarin.buttons\\21.2.10\\syncfusion.xamarin.buttons.21.2.10.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\syncfusion.xamarin.core\\21.2.10\\syncfusion.xamarin.core.21.2.10.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\syncfusion.xamarin.sfautocomplete\\21.2.10\\syncfusion.xamarin.sfautocomplete.21.2.10.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\syncfusion.xamarin.sfmaskededit\\21.2.10\\syncfusion.xamarin.sfmaskededit.21.2.10.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\syncfusion.xamarin.sfrotator\\21.2.10\\syncfusion.xamarin.sfrotator.21.2.10.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\syncfusion.xamarin.sftabview\\21.2.10\\syncfusion.xamarin.sftabview.21.2.10.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\xam.plugins.forms.imagecircle\\3.0.0.5\\xam.plugins.forms.imagecircle.3.0.0.5.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\xamarin.ffimageloading\\2.4.11.982\\xamarin.ffimageloading.2.4.11.982.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\xamarin.ffimageloading.forms\\2.4.11.982\\xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\Hoo\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
+  ],
+  "logs": []
+}

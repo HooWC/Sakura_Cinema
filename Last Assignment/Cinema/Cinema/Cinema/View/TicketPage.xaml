@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="Cinema.View.TicketPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ECECEC">
+
+            <Frame CornerRadius="10" HeightRequest="300" 
+                   HorizontalOptions="CenterAndExpand"  Padding="0" 
+                   WidthRequest="200" Margin="10">
+                <Image Source="{Binding Img}"
+                       Aspect="AspectFill" WidthRequest="200"/>
+            </Frame>
+
+
+
+            <StackLayout Margin="20,0">
+
+                <Label Text="{Binding MovieTitle}" x:Name="MovieTitle" FontAttributes="Bold" FontSize="20"/>
+                <Label Text="{Binding MovieTime}" x:Name="MovieTime" />
+
+                <StackLayout Margin="0,20,0,0">
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Date}" FontAttributes="Bold" FontSize="18"/>
+                        <Label Text="{Binding CinemaTime}" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center"
+                                FontAttributes="Bold" FontSize="18"/>
+                    </StackLayout>
+
+
+                    <Label Text="{Binding HallSeat}"/>
+                    <Label Text="{Binding Seat}"/>
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <BoxView BackgroundColor="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"
+                     Margin="20,10"/>
+
+            <StackLayout Margin="20,0" Orientation="Horizontal">
+                <StackLayout>
+
+                    <Label Text="UserID No" FontAttributes="Bold" FontSize="15"/>
+                    <Label Text="{Binding Userid}" x:Name="userid"/>
+
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="EndAndExpand">
+
+                    <Label Text="Amount" FontAttributes="Bold" FontSize="15"/>
+                    <Label Text="{Binding Amount}" TextColor="OrangeRed" x:Name="amount"/>
+
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Margin="20,15,20,10" VerticalOptions="EndAndExpand">
+                <button:SfButton Text="Check Out" CornerRadius="10" HeightRequest="50" 
+                             BackgroundColor="#E14545" FontAttributes="Bold"
+                             Clicked="Payment">
+                </button:SfButton>
+
+                <button:SfButton Text="Cancel" CornerRadius="10" HeightRequest="50" 
+                             BackgroundColor="LightGray" FontAttributes="Bold"  
+                                 TextColor="Black"
+                             Clicked="Back">
+                </button:SfButton>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

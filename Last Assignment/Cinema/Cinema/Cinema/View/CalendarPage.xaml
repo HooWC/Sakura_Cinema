@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cinema.View.CalendarPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ECECEC" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <Image Source="iconarrowleft2Black" WidthRequest="20" HeightRequest="20" 
+                   HorizontalOptions="StartAndExpand" Margin="20,20,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Back"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <StackLayout BackgroundColor="#ECECEC" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+
+                <StackLayout Orientation="Horizontal" Margin="10,0,0,0" HorizontalOptions="CenterAndExpand">
+                    <StackLayout Margin="5,0,0,0">
+                        <Frame Background="LightGray" CornerRadius="10"></Frame>
+                        <Label Text="Past" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Margin="5,0,0,0">
+                        <Frame Background="#3498db" CornerRadius="10"></Frame>
+                        <Label Text="Future" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <StackLayout Margin="5,0,0,0">
+                        <Frame Background="red" CornerRadius="10"></Frame>
+                        <Label Text="Movie" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"
+                         HeightRequest="100">
+
+                    <Button Clicked="PreviousMonthButton_Clicked" 
+                        Margin="25" Text="Back"  TextColor="White"
+                        BackgroundColor="#3e3f40" FontAttributes="Bold"
+                        CornerRadius="10" HorizontalOptions="StartAndExpand"></Button>
+
+                    <Label x:Name="MonthLabel" FontSize="18" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center"
+                       TextColor="#454545" FontAttributes="Bold"/>
+
+                    <Button Clicked="NextMonthButton_Clicked"  HeightRequest="10"
+                        Margin="25" Text="Next" BackgroundColor="#3d3d3d" TextColor="White"  FontAttributes="Bold"
+                        CornerRadius="10" FontSize="15" HorizontalOptions="EndAndExpand"></Button>
+
+                </StackLayout>
+
+                <Grid BackgroundColor="#ECECEC">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!-- 星期标题栏 -->
+                    <StackLayout Grid.Row="0" Orientation="Horizontal" BackgroundColor="#3d3d3d" Padding="5" Spacing="0">
+                        <Label Text="Sun" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                        <Label Text="Mon" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                        <Label Text="Tue" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                        <Label Text="Wed" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                        <Label Text="Thu" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                        <Label Text="Fri" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                        <Label Text="Sat" HorizontalOptions="CenterAndExpand" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+                    </StackLayout>
+
+                    <!-- 日期格子 -->
+                    <Grid Grid.Row="2" x:Name="myGrid" VerticalOptions="FillAndExpand">
+                        <!-- 在这里添加日历的内容 -->
+                    </Grid>
+                </Grid>
+
+
+
+
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
